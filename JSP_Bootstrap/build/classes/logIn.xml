@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+         PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+         "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="member">
+
+	<insert id="insertMemberById" parameterClass="com.servlet.dto.MemberVO">
+		INSERT INTO MYMEMBER
+				(MEM_ID	,MEM_PASS ,MEM_NAME ,MEM_TEL ,MEM_MAIL)
+		VALUES  (#id#, #pass#, #name#, #tel#, #mail#)
+
+	</insert>
+	<select id="selectMemeberById" parameterClass="String" resultClass="com.servlet.dto.MemberVO">
+ 		SELECT 
+ 			MEM_ID    id
+ 			,MEM_PASS pass
+ 			,MEM_NAME name
+			,MEM_TEL  tel
+			,MEM_MAIL mail
+ 		 FROM MYMEMBER 
+ 		 WHERE MEM_ID = #id#
+	</select>
+	<select id="countAllMemebers" resultClass="int">
+ 		SELECT count(*) as cnt
+ 		 FROM MYMEMBER
+	</select>
+	<select id="selectAllMemberList" resultClass="com.servlet.dto.MemberVO">
+		SELECT
+			MEM_ID	id
+			,MEM_PASS pass
+			,MEM_NAME name
+			,MEM_TEL  tel
+			,MEM_MAIL mail
+ 		 FROM MYMEMBER
+	</select>
+	<update id="updateMemberById" parameterClass="com.servlet.dto.MemberVO">
+		UPDATE MYMEMBER
+		SET MEM_PASS = #pass#
+			, MEM_NAME = #name#
+			, MEM_TEL = #tel#
+			, MEM_MAIL = #mail#
+		WHERE MEM_ID = #id#
+	</update>
+	<delete id="deleteMemberById" parameterClass="String">
+		DELETE FROM MYMEMBER WHERE MEM_ID = #id#
+	</delete>
+</sqlMap>
