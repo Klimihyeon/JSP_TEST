@@ -19,6 +19,14 @@ public interface init {
 	 *  3.mybatis >> oracle sql session.
 	 *  
 	 *  4. 
+	 *  xml > dao > ser > handler > front handler >?
+	 *  
+	 *  
+	 *  
+	 *  						handlerMapper > Front handler
+	 *  applicationContext (Map)> handlerMapper
+	 *  						viewResolver > Front handler
+	 *  JSONResolver?
 	 *  
 	 *  
 	 *  

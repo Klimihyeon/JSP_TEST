@@ -1,0 +1,30 @@
+1.  작업진행 프로세스
+
+		front contoller 는 handler-mapper를 호출해서 핸들러 정보를 가져온다.
+		00핸들러(업로드)는 호출된다.
+		00핸들러는 멀티파트 서블릿 리퀘스트 파서를 호출한다. 
+		<<???
+		>>?? 뭘 받음?
+		
+		00핸들러는 멀티파트 업로드 리졸버를 호출한다.
+		
+		<<아이템을 받는다.
+		>>List<AttachVO>를 준다.
+
+		멀티파트 업로드 리졸버는 attachVO를 호출한다.
+		
+		멀티파트 업로드 리졸버는 get uploadpath를 호출한다.
+		path를 받는다.		
+		
+		멀티파트 업로드 리졸버는 makefilename을 호출해서
+		uuid화 된 filename을 받는다.
+		
+		핸들러는  RESTful로  fileName을 표시한다.
+
+		
+2. 작성순서
+
+	1. AttachVO.xml
+	2. MakeFileName.java
+	3. GetUploadPath.java
+	4. ServletFileUploadBuilder.java
