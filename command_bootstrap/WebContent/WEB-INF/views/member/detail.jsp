@@ -39,7 +39,7 @@
 	        	<div class="register-card-body" >
 	            	<div class="row"  style="height:200px;">
 						<div class="mailbox-attachments clearfix col-md-12" style="text-align: center;">							
-							<div id="pictureView" style="border: 1px solid green; height: 200px; width: 140px; margin: 0 auto;"></div>														
+							<div id="pictureView" data-id="${member.id }" style="border: 1px solid green; height: 200px; width: 140px; margin: 0 auto;"></div>														
 						</div>
 					</div>
 					<br />
@@ -74,12 +74,13 @@
 		          <div class="card-footer" >
 		          		<div class="row">
 			          		
+			          		
 			          		<div class="col-sm-3 text-center">
-			          			<button type="button" onclick="location.href='modifyForm.do?id=${member.id}'" id="modifyBtn" class="btn btn-warning ">수 정</button>
+			          			<button type="button" onclick="location.href='modifyForm.do?id=${member.id}';" id="modifyBtn" class="btn btn-warning ">수 정</button>
 			          		</div>
 		          		
 			          		<div class="col-sm-3 text-center">
-			          			<button type="button" onclick="location.href='remove.do?id=${member.id}" 
+			          			<button type="button" onclick="location.href='remove.do?id=${member.id}';" 
 			          			id="deleteBtn" class="btn btn-danger" >삭 제</button>
 			          		</div>
 			          		<div class="col-sm-3 text-center">
@@ -87,7 +88,7 @@
 			          		</div>
 			          	
 			          		<div class="col-sm-3 text-center">
-			            		<button type="button" id="listBtn" onclick="" class="btn btn-primary pull-right">닫 기</button>
+			            		<button type="button" id="listBtn" onclick="CloseWindow();" class="btn btn-primary pull-right">닫 기</button>
 			            	</div>
 		          	    </div>  	
 		          </div>
@@ -97,18 +98,20 @@
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
-
-<script type="text/javascript">
-	
-	var picture = document.getElementById("pictureView");
-	
-
-	var picture = document.getElementById("pictureView");
-	picture.style.backgroundImage="url('getPicture.do?picture=${member.picture }')";
-	picture.style.backgroundPosition="center";
-	picture.style.backgroundRepeat="no-repeat";
-	picture.style.backgroundSize="cover";
-</script>
-</body>
+<script>
+window.onload=function(){
+	MemberPictureThumb(document.querySelector('[data-id="${member.id}"]'),'${member.picture}');
+}
+</script>  
   
+</body>
+
+
+
+
+
+
+
+
+
 

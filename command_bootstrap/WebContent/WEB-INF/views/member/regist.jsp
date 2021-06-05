@@ -8,7 +8,27 @@
 
 	<!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper" >
-  
+  	 <section class="content-header">
+	  	<div class="container-fluid">
+	  		<div class="row md-2">
+	  			<div class="col-sm-6">
+	  				<h1>회원등록</h1>  				
+	  			</div>
+	  			<div class="col-sm-6">
+	  				<ol class="breadcrumb float-sm-right">
+			        <li class="breadcrumb-item">
+			        	<a href="#">
+				        	<i class="fa fa-dashboard">회원관리</i>
+				        </a>
+			        </li>
+			        <li class="breadcrumb-item active">
+			        	등록
+			        </li>		        
+	    	  </ol>
+	  			</div>
+	  		</div>
+	  	</div>
+  	</section>
 	<!-- Main content -->
 	<section class="content register-page">
 		<div class="register-box">
@@ -40,8 +60,8 @@
 							 	<span style="color:red;font-weight:bold;">*</span>아이디</label>	
 							<div class="col-sm-9 input-group input-group-sm">
 								<input name="id" 
-									
-									type="text" class="form-control" id="id" placeholder="13글자 영문자,숫자 조합">
+									onkeyup="this.value=this.value.replace(/[\ㄱ-ㅎㅏ-ㅣ가-힣]/g, &#39;&#39;);"
+								type="text" class="form-control" id="id" placeholder="13글자 영문자,숫자 조합">
 								<span class="input-group-append-sm">	
 									<button type="button" onclick="idCheck_go();"  class="btn btn-info btn-sm btn-append">중복확인</button>
 								</span>								
@@ -61,7 +81,6 @@
 								<span style="color:red;font-weight:bold;">*</span>이 름</label>
 							<div class="col-sm-9 input-group-sm">								
 								<input class="form-control" name="name" type="text" class="form-control" id="name"
-										onkeyup="this.value=this.value.replace(/[\ㄱ-ㅎㅏ-ㅣ가-힣]/g, &#39;&#39;);"
 										placeholder="이름을 입력하세요" />
 							</div>
 							
@@ -105,11 +124,11 @@
 						<div class="card-footer">
 							<div class="row">								
 								<div class="col-sm-6">
-									<button type="button" id="registBtn" onclick="regist_go()" class="btn btn-info">가입하기</button>
+									<button type="button" id="registBtn" onclick="regist_go();" class="btn btn-info">가입하기</button>
 							 	</div>
 							 	
 							 	<div class="col-sm-6">
-									<button type="button" id="cancelBtn" onclick="CloseWindow()"
+									<button type="button" id="cancelBtn" onclick="CloseWindow();"
 										class="btn btn-default float-right">&nbsp;&nbsp;&nbsp;취 &nbsp;&nbsp;소&nbsp;&nbsp;&nbsp;</button>
 								</div>
 							
@@ -122,23 +141,20 @@
 	</section>		<!-- /.content -->
 </div>
 <!-- /.content-wrapper -->
-<script src="/resources/js/common.js"></script>
+
 
 <form role="imageForm" action="upload/picture.do" method="post" enctype="multipart/form-data">
-	<input id="inputFile" name="pictureFile" type="file" class="form-control" 
-			style="display:none;" onchange="picture_go();">
+	<input id="inputFile" name="pictureFile" type="file" class="form-control" onchange="picture_go();"
+			style="display:none;">
 	<input id="oldFile" type="hidden" name="oldPicture" value="" />
 	<input type="hidden" name="checkUpload" value="0" />	
 </form>
 
-
-<script src="/resources/js/member/regist.js"> </script>
-<script type="text/javascript">
-
-
-</script>
+<script src="/resources/js/member/regist.js" ></script>
 
 </body>
+
+
 
 
 

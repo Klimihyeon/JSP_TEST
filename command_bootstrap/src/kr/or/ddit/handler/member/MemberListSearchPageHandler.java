@@ -26,7 +26,7 @@ public class MemberListSearchPageHandler implements Handler {
 		String perPageNum = request.getParameter("perPageNum");
 		String searchType =  request.getParameter("searchType");
 		String keyword =  request.getParameter("keyword");
-		
+
 		
 		SearchCriteria cri = new SearchCriteria();
 		cri.setPage(pageParam);

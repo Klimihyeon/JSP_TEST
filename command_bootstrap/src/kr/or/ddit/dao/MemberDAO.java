@@ -25,4 +25,15 @@ public interface MemberDAO {
 	//회원추가
 	public void insertMember(SqlSession session, MemberVO member)throws SQLException;
 	
+	//회원정보 수정
+	public void updateMember(SqlSession session, MemberVO member)throws SQLException;
+	
+	//회원정보 삭제
+	void deleteMember(SqlSession session, String id) throws SQLException;
+	//회원 정지
+	void disabledMember(SqlSession session, String id) throws SQLException;
+	//회원 활성화 
+	void enabledMember(SqlSession session, String id) throws SQLException;
+	
+	
 }

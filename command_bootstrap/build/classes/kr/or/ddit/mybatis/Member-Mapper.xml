@@ -20,7 +20,7 @@
 	
 	<select id="selectSearchMemberList" resultType="member">
 		select
-		*
+		*																																																										
 		from member
 		where id is not null
 		<include refid="search" />
@@ -62,10 +62,27 @@
 		, phone = #{phone}
 		, picture = #{picture}
 		, name = #{name}
-		, authority = #{authority}
+		
+		<if test="authority !=null">
+			, authority = #{authority}
+		</if>
 		where id = #{id}		
 	</update>
-	
+	<update id="deleteMember" parameterType="str">
+		delete
+		from member
+		where id =#{id}
+	</update>
+	<update id="disabledMember">
+		update member
+		set enabled=0
+		where id = #{id}	
+	</update>	
+	<update id="enabledMember">
+		update member
+		set enabled=1
+		where id = #{id}	
+	</update>	
 	
 	
 </mapper>

@@ -25,4 +25,12 @@ public interface MemberService {
 	
 	//회원등록
 	public void regist(MemberVO member)throws SQLException;
+	//회원 수정
+	public void modify(MemberVO member)throws SQLException;
+	//회원삭제 
+	void remove(String id) throws SQLException;
+	//회원정지
+	void disabled(String id) throws SQLException;
+	//회원 활성
+	void enabled(String id) throws SQLException;
 }

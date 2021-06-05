@@ -20,6 +20,7 @@ public class MemberListHandler implements Handler {
 		String url="member/list";
 		//Front에서 처리하기로 했으니까 이렇게.
 		
+		
 		List<MemberVO> memberList = memberService.getMemberList();
 		//FrontServlet에서 exception이 나와도 던지는 것을 확인했으니까 이것도 똑같이 던져버린다.
 		
