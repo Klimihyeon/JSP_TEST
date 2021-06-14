@@ -10,7 +10,8 @@
      	<!-- main menu list -->
      	<c:forEach items="${menuList }" var="menu">
     	<li class="nav-item d-none d-sm-inline-block"  >
-    	<a class="nav-link" href="javascript:subMenu('${menu.mcode }');goPage('${menu.murl}','${menu.mcode }');">
+    	<a class="nav-link" href="javascript:subMenu('${menu.mcode }');goPage('${menu.murl}','${menu.mcode }');"
+    		>
     			<i class="${menu.micon }" ></i>
     			${menu.mname }
     		</a>
