@@ -29,15 +29,7 @@ public interface init {
 	 *  JSONResolver?
 	 *  
 	 *  
-	 *  decorator 
 	 *  
-	 *   1. web.xml > filter sitemash.
-	 *   2. sitemesh.xml
-	 *   3. decorators.xml
-	 *   4. main_decorator
-	 *   
-	 *   
-	 *   
 	 *  
 	 *  
 	 *  

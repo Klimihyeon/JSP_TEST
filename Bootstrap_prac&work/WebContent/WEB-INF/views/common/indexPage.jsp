@@ -27,7 +27,7 @@
 <script type="text/x-handlebars-template"  id="subMenu-list-template" >
 {{#each .}}
 <li class="nav-item subMenu" >
-   <a href="javascript:goPage('{{murl}}','{{mcode}}');" class="nav-link">
+   <a href="javascript:goPage('{{murl}}','{{mcode}}');initPageParam();" class="nav-link">
       <i class="{{micon}}"></i>
       <p>{{mname}}</p>
    </a>
